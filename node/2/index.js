@@ -23,6 +23,7 @@ function checkForNewDrives() {
 
     console.log('New drive found');
     diff.forEach(checkForAdminFolder);
+    lastDriveList = drives;
   })
 }
 
