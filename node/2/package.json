@@ -1,0 +1,27 @@
+{
+  "name": "pidrop",
+  "version": "1.0.0",
+  "description": "Turn a Raspberry Pi into a device similar to a dead drop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imakewebthings/pidrop.git"
+  },
+  "keywords": [
+    "pi",
+    "dreaddrop"
+  ],
+  "author": "Caleb Troughton <caleb@imakewebthings.com> (http://imakewebthings.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imakewebthings/pidrop/issues"
+  },
+  "homepage": "https://github.com/imakewebthings/pidrop",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "nodejs-disks": "^0.2.1"
+  }
+}

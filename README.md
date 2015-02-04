@@ -1,4 +1,4 @@
-# Pi Drop
+# Pidrop
 
 The goal of this project is to turn a Raspberry Pi into a device similar to a [dead drop](http://en.wikipedia.org/wiki/Dead_drop). Ultimately, the following interactions should be possible:
 
@@ -18,7 +18,7 @@ Print a message to the console whenever a USB device is plugged in.
 
 ### Step 2
 
-Check for the existence of some folder (hardcoded name) on that USB device and print something to the console.
+Check for the existence of a folder named `pidrop-admin` at the root of that USB device and print something to the console.
 
 ### Step 3
 
