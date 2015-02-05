@@ -22,15 +22,15 @@ Check for the existence of a folder named `pidrop-admin` at the root of that USB
 
 ### Step 3
 
-Grab all files from that folder and copy them to a folder (hardcoded name) on the Pi.
+Grab all files from that folder and copy them to a folder on the Pi named `swap`. Any previous contents of the `swap` folder should be wiped away. The copy should be recursive, so if the admin folder contains directories those directories should all be copied.
 
 ### Step 4
 
-If the folder doesn't exist, create a different folder (hardcoded name) and copy the contents of the local Pi folder to this new folder on the USB device.
+If the admin folder doesn't exist, find or create a folder at the root of the USB device named `pidrop-user`. Copy the contents of the `swap` folder on the Pi to this `pidrop-user` folder on the USB device. When copying files, overwrite any existing files but do not wipe the contents of that user folder.
 
 ### Step 5
 
-Take hardcoded values for folder names and move those to a config file.
+Take all the hardcoded values for folder names and move them to a config file.
 
 ### Step 6
 

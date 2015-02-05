@@ -26,12 +26,14 @@ function checkForAdminFolder(drive) {
     if (err) {
       return console.log(err);
     }
-    var folderPath = path.resolve(disk.mountpoint, 'pidrop-admin');
-    fs.readdir(folderPath, function(err) {
+    var adminPath = path.resolve(disk.mountpoint, 'pidrop-admin');
+    fs.readdir(adminPath, function(err) {
+      var userPath = path.resolve(disk.mountpoint, 'pidrop-user');
       if (err) {
-        return console.log('No admin folder found');
+        console.log('No admin folder found');
+        return copyUserFolder(userPath);
       }
-      copyAdminFolder(folderPath);
+      copyAdminFolder(adminPath);
     });
   });
 }
@@ -47,6 +49,15 @@ function copyAdminFolder(folderPath) {
       }
       console.log('Admin folder found, files uploaded');
     });
+  });
+}
+
+function copyUserFolder(folderPath) {
+  ncp(swapFolder, folderPath, function(err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log('Files downloaded to user folder');
   });
 }
 
