@@ -2,28 +2,19 @@ var fs = require('fs');
 var path = require('path');
 var disks = require('nodejs-disks');
 var _ = require('lodash');
-var lastDriveList, timer;
-
-function setDriveList(callback) {
-  disks.drives(function(err, drives) {
-    lastDriveList = drives;
-    callback();
-  });
-}
+var lastDriveList;
 
 function checkForNewDrives() {
   disks.drives(function(err, drives) {
     var diff = _.difference(drives, lastDriveList);
 
-    console.log('Checking for new drives')
+    lastDriveList = drives;
+    console.log('Checking for new drives');
     if (!diff.length) {
-      timer = setTimeout(checkForNewDrives, 1000);
       return;
     }
-
     console.log('New drive found');
     diff.forEach(checkForAdminFolder);
-    lastDriveList = drives;
   })
 }
 
@@ -42,4 +33,7 @@ function checkForAdminFolder(drive) {
   });
 }
 
-setDriveList(checkForNewDrives);
+disks.drives(function(err, drives) {
+  lastDriveList = drives;
+  setInterval(checkForNewDrives, 1000);
+});
