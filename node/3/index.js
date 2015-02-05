@@ -1,7 +1,10 @@
 var fs = require('fs');
 var path = require('path');
+var ncp = require('ncp');
+var rimraf = require('rimraf');
 var disks = require('nodejs-disks');
 var _ = require('lodash');
+var swapFolder = path.resolve('./swap');
 var lastDriveList;
 
 function checkForNewDrives() {
@@ -24,11 +27,25 @@ function checkForAdminFolder(drive) {
       return console.log(err);
     }
     var folderPath = path.resolve(disk.mountpoint, 'pidrop-admin');
-    fs.readdir(folderPath, function(err, files) {
+    fs.readdir(folderPath, function(err) {
       if (err) {
-        return console.log('No admin folder found');
+        console.log('No admin folder found');
       }
-      console.log('Admin folder found');
+      copyAdminFolder(folderPath);
+    });
+  });
+}
+
+function copyAdminFolder(folderPath) {
+  rimraf(swapFolder, function(err) {
+    if (err) {
+      return console.log(err);
+    }
+    ncp(folderPath, swapFolder, function(err) {
+      if (err) {
+        return console.log(err);
+      }
+      console.log('Admin folder found, files uploaded');
     });
   });
 }

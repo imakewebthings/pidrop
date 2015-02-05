@@ -12,7 +12,7 @@ function checkForNewDrives() {
       return;
     }
     console.log('New drive found');
-  })
+  });
 }
 
 disks.drives(function(err, drives) {
