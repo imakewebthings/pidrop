@@ -1,3 +1,5 @@
 node_modules
 swap
 config.json
+node/*/*.js
+node/*/package.json

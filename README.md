@@ -10,7 +10,7 @@ The target use case for this is slightly less shady than the spy origins of "dea
 
 ## Roadmap
 
-These are rough, speculative steps we can take to get to our final destination.
+These are the broad, generic steps we will take to get to our final destination. For a given programming language (see [node](https://github.com/imakewebthings/pidrop/tree/master/node)) more specific instructions can be found in that folder.
 
 ### Step 1
 
