@@ -7,6 +7,11 @@ var _ = require('lodash');
 var swapFolder = path.resolve('./swap');
 var lastDriveList;
 
+disks.drives(function(err, drives) {
+  lastDriveList = drives;
+  setInterval(checkForNewDrives, 1000);
+});
+
 function checkForNewDrives() {
   disks.drives(function(err, drives) {
     var diff = _.difference(drives, lastDriveList);
@@ -49,8 +54,3 @@ function copyAdminFolder(folderPath) {
     });
   });
 }
-
-disks.drives(function(err, drives) {
-  lastDriveList = drives;
-  setInterval(checkForNewDrives, 1000);
-});
