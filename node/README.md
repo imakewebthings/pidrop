@@ -15,5 +15,6 @@ Before proceeding to [Step 1](./1), let's get the Pi ready for our Node program.
 5. Set nvm to use this version of Node by default every time the Pi boots by running `nvm alias default 0.10.28`.
 6. Test that everything works by running `node -v`. You should see `v0.10.28`.
 7. Create a new folder somewhere. This is where you will work. Inside that folder run `npm init`. It will ask you a number of questions. You can hit enter to all of the questions to accept the default answers.
+8. Create an `index.js` file. This file will be the entry point for your program going forward.
 
 That's it! Proceed to [Step 1](./1), and happy coding.
