@@ -6,12 +6,13 @@ Before proceeding to [Step 1](./1), let's get the Pi ready for our Node program.
 
 ## Step 0
 
-**Note**: This project is limited to working on Pi. You should find that you can develop and test entirely on your laptop without touching the Pi. That is fine (and encouraged) but we'll want to put this thing on the Pi sooner or later. To do that, we'll need to install Node.
+**Note**: This project is **not** limited to working on Pi. You should be able to develop and test entirely on your laptop without touching the Pi. That is fine (and encouraged) but we'll want to put this thing on the Pi sooner or later. To do that, we'll need to install Node.
 
 1. Install [nvm](https://github.com/creationix/nvm) by running `curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash`.
-2. Install Node 0.10.28 (at the time of this writing, this is the latest distributed version of Node with a prebuilt ARM install for the Pi. This avoids building Node from source) by running `nvm install 0.10.28`.
-3. Set nvm to use this newly installed version by running `nvm use 0.10.28`.
-4. Set nvm to use this version of Node by default every time the Pi boots by running `nvm alias default 0.10.28`.
-5. Test that everything works by running `node -v`. You should see `v0.10.28`.
+2. To make the `nvm` command available you will need to source your shell profile by running `source ~/.bashrc` or `source ~/.bash_profile`. You could also restart your terminal program or computer.
+3. Install Node 0.10.28 (at the time of this writing, this is the latest distributed version of Node with a prebuilt ARM install for the Pi. This avoids building Node from source) by running `nvm install 0.10.28`.
+4. Set nvm to use this newly installed version by running `nvm use 0.10.28`.
+5. Set nvm to use this version of Node by default every time the Pi boots by running `nvm alias default 0.10.28`.
+6. Test that everything works by running `node -v`. You should see `v0.10.28`.
 
 That's it! Proceed to [Step 1](./1), and happy coding.
