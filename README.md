@@ -4,13 +4,13 @@ The goal of this project is to turn a Raspberry Pi into a device similar to a [d
 
 - The owner of the Pi goes through a setup procedure that sets up this process and creates the necessary folders on their USB stick.
 - When a person inserts a USB stick into the Pi, if that stick contains a special folder (determined during setup above) then the contents of that folder are uploaded to a drop folder on the Pi.
-- When a person inserts a USB stick into the Pi and **do not** have that special folder, they are a receiver. The contents of the drop folder are copied to a folder on the receiver's USB stick.
+- When a person inserts a USB stick into the Pi that **does not** have that special folder, they are a receiver. The contents of the drop folder are copied to a folder on the receiver's USB stick.
 
 The target use case for this is slightly less shady than the spy origins of "dead drop" suggest. We have a teacher in a classroom with a Raspberry Pi who has issued USB sticks to their students. They want to be able to disseminate class material to students by having them plug in their sticks as they come into lecture.
 
 ## Roadmap
 
-These are the broad, generic steps we will take to get to our final destination. For a given programming language (see [node](https://github.com/imakewebthings/pidrop/tree/master/node)) more specific instructions can be found in that folder.
+These are the broad, generic steps we will take to get to our final destination. For a given programming language, (see [node](https://github.com/imakewebthings/pidrop/tree/master/node)) more specific instructions can be found in that folder.
 
 ### Step 1
 
