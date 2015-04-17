@@ -13,9 +13,8 @@ function checkForNewDrives() {
 
     lastDriveList = drives;
     console.log('Checking for new drives');
-    if (!diff.length) {
-      return;
+    if (diff.length) {
+      console.log('New drive found');
     }
-    console.log('New drive found');
   });
 }
